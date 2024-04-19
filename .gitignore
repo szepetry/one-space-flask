@@ -3,3 +3,4 @@ __pycache__
 app/__pycache__
 app/utilities/__pycache__
 .vercel
+single_line_key

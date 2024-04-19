@@ -1,12 +1,21 @@
 #!/bin/bash
+# Decode the SSH private key from a single line to the original format
+echo "$SSH_PRIVATE_KEY" | tr -d '\r' | sed 's/\\n/\n/g' > /tmp/decoded_key
+
+# Ensure the key has the correct permissions
+chmod 600 /tmp/decoded_key
+
 # Start the ssh-agent
 eval "$(ssh-agent -s)"
 
-# Add the SSH key stored in the environment variable
-echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+# Add the SSH key stored in the temporary file
+ssh-add /tmp/decoded_key
 
-# Disable host key checking
+# Clean up the temporary file after use
+rm /tmp/decoded_key
+
+# Disable host key checking to avoid prompts
 export GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 
-# Run your original build command
+# Run your Flask application
 python run.py
