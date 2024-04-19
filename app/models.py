@@ -75,7 +75,7 @@ def query_vectors(pc, query_str):
 
     results = index.query(
         vector=[query_vector.tolist()],
-        top_k=3,
+        top_k=10,
         # include_values=False,
         include_metadata=True,
     )
@@ -98,20 +98,6 @@ def query_vectors(pc, query_str):
 
 
 def query_langchain(pc, vector):
-    # index = pc.Index(index_name)
-    # query_vector = get_bert_embeddings(query_str)
-
-    # results = index.query(
-    #     vector=[query_vector.tolist()],
-    #     top_k=5,
-    #     # include_values=False,
-    #     include_metadata=True,
-    # )
-    # print(results)
-    # similar_texts = [
-    #     {"prompt": match["metadata"]["text"]} for match in results["matches"]
-    # ]
-    # print(similar_texts[0])
     print(vector)
     response = get_langchain_connection(data=vector)
     print(response)
