@@ -11,11 +11,8 @@ eval "$(ssh-agent -s)"
 # Add the SSH key stored in the temporary file
 ssh-add /tmp/decoded_key
 
-# Clean up the temporary file after use
-rm /tmp/decoded_key
-
-# Disable host key checking to avoid prompts
-export GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+# Debugging SSH connections
+export GIT_SSH_COMMAND="ssh -vvv -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 
 # Run your Flask application
 python run.py
