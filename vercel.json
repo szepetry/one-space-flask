@@ -1,15 +1,23 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "run.py",
-            "use": "vercel/python"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/run.py"
-        }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "run.py",
+      "use": "vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/run.py"
+    }
+  ],
+  "env": {
+    "API_KEY": "@api_key"
+  },
+  "build": {
+    "env": {
+      "SSH_PRIVATE_KEY": "@ssh_private_key"
+    }
+  }
 }
