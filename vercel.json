@@ -3,7 +3,9 @@
         {
             "src": "run.py",
             "use": "vercel/python",
-            "GIT_SSH_COMMAND": "ssh -i ~/.ssh/id_ed25519 -o 'StrictHostKeyChecking=no'"
+            "env": {
+                "GIT_SSH_COMMAND": "ssh -i ~/.ssh/id_ed25519 -o 'StrictHostKeyChecking=no'"
+            }
         }
     ],
     "routes": [
