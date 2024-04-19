@@ -38,7 +38,7 @@ def query_vectors_route():
 def query_langchain_route():
     json_data = request.get_json()
     vector = json_data["vector"]
-    results = query_langchain(pc, vector)
+    results = query_langchain(vector)
     return jsonify(data=results)
 
 @main_blueprint.route("/deleteIndex", methods=["GET"])

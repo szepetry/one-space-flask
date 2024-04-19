@@ -97,7 +97,7 @@ def query_vectors(pc, query_str):
     return similar_texts
 
 
-def query_langchain(pc, vector):
+def query_langchain(vector):
     print(vector)
     response = get_langchain_connection(data=vector)
     print(response)
