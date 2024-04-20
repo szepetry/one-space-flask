@@ -8,3 +8,5 @@ pinecone-client
 python-dotenv
 torch
 transformers
+waitress
+pygit2
