@@ -6,7 +6,8 @@ app = create_app()
     
 if __name__ == "__main__":
     from waitress import serve
-    serve(app, host="0.0.0.0", port=5001)
+    print("Hosting maid service started.")
+    serve(app, host="0.0.0.0", port=5000)
     # if Repository(".").head.shorthand == "main":
     #     serve(app, host="0.0.0.0", port=5001)
     # else:
