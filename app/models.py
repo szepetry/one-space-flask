@@ -6,9 +6,11 @@ from .utilities.pinecone_connector import (
 from .utilities.langchain_connector import get_langchain_connection
 from pinecone import ServerlessSpec
 import pandas as pd
+import os
 
+path_to_csv = os.path.join('app', 'dataset', 'pair_data.csv')
 
-data = pd.read_csv("app/dataset/pair_data.csv")
+data = pd.read_csv(path_to_csv)
 
 index_name = "one-space-index"
 
