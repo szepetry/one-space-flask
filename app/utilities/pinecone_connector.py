@@ -12,7 +12,7 @@ model = BertModel.from_pretrained("bert-base-uncased")
 
 
 def get_pinecone_connection():
-    print(os.getenv('PINECONE_API_KEY'))
+    # print(os.getenv('PINECONE_API_KEY'))
     return Pinecone(api_key=os.getenv('PINECONE_API_KEY'))
 
 def get_bert_embeddings(text):

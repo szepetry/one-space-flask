@@ -10,3 +10,4 @@ torch
 transformers
 waitress
 pygit2
+flask_jwt_extended
