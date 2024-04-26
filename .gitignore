@@ -5,3 +5,4 @@ app/utilities/__pycache__
 .vercel
 single_line_key
 cert
+nohup.out
